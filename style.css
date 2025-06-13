@@ -1,46 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&family=Raleway:wght@400;500;600;700&display=swap');
 
-/* Root variables - Oasis Dark Mode Only */
 :root {
-  --color-primary: #D4A24A;
-  --color-primary-hover: #BB862C;
-  --color-primary-active: #A97326;
+  /* Colors */
+  --color-background: rgba(252, 252, 249, 1);
+  --color-surface: rgba(255, 255, 253, 1);
+  --color-text: rgba(19, 52, 59, 1);
+  --color-text-secondary: rgba(98, 108, 113, 1);
+  --color-primary: rgba(33, 128, 141, 1);
+  --color-primary-hover: rgba(29, 116, 128, 1);
+  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-secondary: rgba(94, 82, 64, 0.12);
+  --color-secondary-hover: rgba(94, 82, 64, 0.2);
+  --color-secondary-active: rgba(94, 82, 64, 0.25);
+  --color-border: rgba(94, 82, 64, 0.2);
+  --color-btn-primary-text: rgba(252, 252, 249, 1);
+  --color-card-border: rgba(94, 82, 64, 0.12);
+  --color-card-border-inner: rgba(94, 82, 64, 0.12);
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: rgba(33, 128, 141, 1);
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  /* Updated select caret to use new brand text color for light mode */
+  --color-select-caret: rgba(59, 27, 66, 0.8); /* #3B1B42 based */
 
-  --color-background: #2A1030;
-  --color-surface: #3B1B42;
-
-  --color-text: #FBF8F8;
-  --color-text-secondary: rgba(251, 248, 248, 0.7);
-
-  --color-secondary: rgba(212, 162, 74, 0.15);
-  --color-secondary-hover: rgba(212, 162, 74, 0.2);
-  --color-secondary-active: rgba(212, 162, 74, 0.25);
-
-  --color-border: rgba(251, 248, 248, 0.25);
-  --color-card-border: rgba(251, 248, 248, 0.15);
-  --color-card-border-inner: rgba(251, 248, 248, 0.1);
-
-  --color-focus-ring: rgba(212, 162, 74, 0.4);
-  --color-btn-primary-text: #2A1030;
-
-  --color-primary-rgb: 212, 162, 74;
-  --color-text-rgb: 251, 248, 248;
-
-  --color-error: rgba(255, 84, 89, 1);
-  --color-success: rgba(50, 184, 198, 1);
-  --color-warning: rgba(230, 129, 97, 1);
-  --color-info: rgba(167, 169, 169, 1);
-
-  --focus-outline: 2px solid var(--color-primary);
+  /* Common style patterns */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
   --status-border-opacity: 0.25;
+  /* Updated select caret to use new brand text color for light mode */
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233B1B42' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  /* Updated select caret to use new brand text color for dark mode - will be overridden in dark mode media query */
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
+  /* RGB versions for opacity control */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+  /* Added RGB for new primary and text for Oasis brand, will be overridden by Oasis specific section */
+  --color-primary-rgb: 33, 128, 141; 
+  --color-text-rgb: 19, 52, 59;
+
+
+  /* Typography */
+  /* Updated font family to include Raleway and Limelight */
   --font-family-base: "Raleway", "Limelight", "FKGroteskNeue", "Geist", "Inter", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, monospace;
-
   --font-size-xs: 11px;
   --font-size-sm: 12px;
   --font-size-base: 14px;
@@ -50,16 +59,15 @@
   --font-size-2xl: 20px;
   --font-size-3xl: 24px;
   --font-size-4xl: 30px;
-
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
   --font-weight-bold: 600;
-
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --letter-spacing-tight: -0.01em;
 
+  /* Spacing */
   --space-0: 0;
   --space-1: 1px;
   --space-2: 2px;
@@ -73,44 +81,172 @@
   --space-24: 24px;
   --space-32: 32px;
 
+  /* Border Radius */
   --radius-sm: 6px;
   --radius-base: 8px;
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-full: 9999px;
 
+  /* Shadows */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
     0 2px 4px -1px rgba(0, 0, 0, 0.02);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
     0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
 
+  /* Animation */
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Layout */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
 }
 
-500;600;700&display=swap');
-
-/* Root variables - Oasis Dark Mode Only */
-
-
 /* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: rgba(31, 33, 33, 1);
+    --color-surface: rgba(38, 40, 40, 1);
+    --color-text: rgba(245, 245, 245, 1);
+    --color-text-secondary: rgba(167, 169, 169, 0.7);
+    --color-primary: rgba(50, 184, 198, 1);
+    --color-primary-hover: rgba(45, 166, 178, 1);
+    --color-primary-active: rgba(41, 150, 161, 1);
+    --color-secondary: rgba(119, 124, 124, 0.15);
+    --color-secondary-hover: rgba(119, 124, 124, 0.25);
+    --color-secondary-active: rgba(119, 124, 124, 0.3);
+    --color-border: rgba(119, 124, 124, 0.3);
+    --color-error: rgba(255, 84, 89, 1);
+    --color-success: rgba(50, 184, 198, 1);
+    --color-warning: rgba(230, 129, 97, 1);
+    --color-info: rgba(167, 169, 169, 1);
+    --color-focus-ring: rgba(50, 184, 198, 0.4);
+    --color-btn-primary-text: rgba(19, 52, 59, 1);
+    --color-card-border: rgba(119, 124, 124, 0.2);
+    --color-card-border-inner: rgba(119, 124, 124, 0.15);
+    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    --button-border-secondary: rgba(119, 124, 124, 0.2);
+    --color-border-secondary: rgba(119, 124, 124, 0.2);
+    /* Updated select caret to use new brand text color for dark mode */
+    --color-select-caret: rgba(251, 248, 248, 0.8); /* #FBF8F8 based */
 
+
+    /* Common style patterns - updated for dark mode */
+    --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    --focus-outline: 2px solid var(--color-primary);
+    --status-bg-opacity: 0.15;
+    --status-border-opacity: 0.25;
+    /* select-caret-light remains for specific light contexts if needed, dark is primary here */
+    /* select-caret-dark is updated via --color-select-caret change and its usage in select.form-control */
+     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+
+    /* RGB versions for dark mode */
+    --color-success-rgb: 50, 184, 198;
+    --color-error-rgb: 255, 84, 89;
+    --color-warning-rgb: 230, 129, 97;
+    --color-info-rgb: 167, 169, 169;
+    /* Added RGB for new primary and text for Oasis brand, will be overridden by Oasis specific section */
+    --color-primary-rgb: 50, 184, 198; 
+    --color-text-rgb: 245, 245, 245;
+  }
+}
 
 /* Data attribute for manual theme switching */
 /* Updated to reflect new Oasis PDF Brand Colors */
+[data-color-scheme="dark"] {
+  --color-primary: #D4A24A; /* Lighter Gold */
+  --color-primary-hover: #BB862C; /* Oasis Gold */
+  --color-primary-active: #A97326; /* Darker Oasis Gold */
+  
+  --color-background: #2A1030; /* Darker Oasis Purple/Blue */
+  --color-surface: #3B1B42; /* Oasis Purple/Blue */
+  
+  --color-text: #FBF8F8; /* Oasis Off-White */
+  --color-text-secondary: rgba(251, 248, 248, 0.7); /* Oasis Off-White with opacity */
+
+  --color-secondary: rgba(212, 162, 74, 0.15); /* Lighter Gold with opacity */
+  --color-secondary-hover: rgba(212, 162, 74, 0.2);
+  --color-secondary-active: rgba(212, 162, 74, 0.25);
+
+  --color-border: rgba(251, 248, 248, 0.25); /* Oasis Off-White with opacity */
+  --color-card-border: rgba(251, 248, 248, 0.15);
+  --color-card-border-inner: rgba(251, 248, 248, 0.1); /* Slightly lighter for inner borders */
+  
+  --color-focus-ring: rgba(212, 162, 74, 0.4); /* Lighter Gold with opacity */
+  
+  --color-btn-primary-text: #2A1030; /* Darker Oasis Purple/Blue, for contrast on Lighter Gold button */
+  
+  --color-select-caret: rgba(251, 248, 248, 0.8); /* Oasis Off-White based */
+
+  /* Retain original status colors for dark mode unless specified by brand */
+  --color-error: rgba(255, 84, 89, 1);
+  --color-success: rgba(50, 184, 198, 1); /* Original success, or could be var(--color-primary); */
+  --color-warning: rgba(230, 129, 97, 1);
+  --color-info: rgba(167, 169, 169, 1);
+
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12); /* Adjusted for new bg */
+  --color-border-secondary: rgba(251, 248, 248, 0.2); /* Consistent with --color-border */
 
 
+  /* RGB versions for dark mode - Oasis Brand */
+  --color-primary-rgb: 212, 162, 74; /* #D4A24A */
+  --color-text-rgb: 251, 248, 248; /* #FBF8F8 */
+  /* RGB for status colors - using original values */
+  --color-success-rgb: 50, 184, 198; 
+  --color-error-rgb: 255, 84, 89;
+  --color-warning-rgb: 230, 129, 97;
+  --color-info-rgb: 167, 169, 169;
+}
 
+[data-color-scheme="light"] {
+  --color-primary: #BB862C; /* Oasis Gold */
+  --color-primary-hover: #A97326; /* Darker Oasis Gold */
+  --color-primary-active: #976020; /* Even Darker Oasis Gold */
+  
+  --color-background: #FBF8F8; /* Oasis Off-White */
+  --color-surface: #FFFFFF; /* Pure White */
+  
+  --color-text: #3B1B42; /* Oasis Dark Purple/Blue */
+  --color-text-secondary: rgba(59, 27, 66, 0.7); /* Oasis Dark Purple/Blue with opacity */
+
+  --color-secondary: rgba(187, 134, 44, 0.1); /* Oasis Gold with opacity */
+  --color-secondary-hover: rgba(187, 134, 44, 0.15);
+  --color-secondary-active: rgba(187, 134, 44, 0.2);
+  
+  --color-border: rgba(59, 27, 66, 0.25); /* Oasis Dark Purple/Blue with opacity */
+  --color-card-border: rgba(59, 27, 66, 0.15);
+  --color-card-border-inner: rgba(59, 27, 66, 0.1); /* Slightly lighter for inner */
+
+  --color-focus-ring: rgba(187, 134, 44, 0.4); /* Oasis Gold with opacity */
+  --color-btn-primary-text: #FFFFFF; /* White text for contrast on Gold button */
+  --color-select-caret: rgba(59, 27, 66, 0.8); /* Oasis Dark Purple/Blue based */
+
+  /* Retain original status colors for light mode unless specified by brand */
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: rgba(33, 128, 141, 1); /* Original success, or could be var(--color-primary); */
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+
+  /* RGB versions for light mode - Oasis Brand */
+  --color-primary-rgb: 187, 134, 44; /* #BB862C */
+  --color-text-rgb: 59, 27, 66; /* #3B1B42 */
+  /* RGB for status colors - using original values */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+}
 
 /* Base styles */
 html {
@@ -323,7 +459,11 @@ select.form-control {
 }
 
 /* Add a dark mode specific caret */
-
+@media (prefers-color-scheme: dark) {
+  select.form-control {
+    background-image: var(--select-caret-dark);
+  }
+}
 
 /* Also handle data-color-scheme */
 [data-color-scheme="dark"] select.form-control {
@@ -586,7 +726,37 @@ select.form-control {
 }
 
 /* Dark mode adjustments for Oasis brand from PDF */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Oasis Brand Colors from PDF - Dark Mode */
+    --color-primary: #D4A24A; /* Lighter Gold for dark mode */
+    --color-primary-hover: #BB862C; /* Oasis Gold */
+    --color-primary-active: #A97326; /* Darker Oasis Gold */
+    
+    --color-background: #2A1030; /* Darker version of Oasis Purple/Blue */
+    --color-surface: #3B1B42; /* Oasis Purple/Blue as surface */
+    
+    --color-text: #FBF8F8; /* Oasis Off-White for text */
+    --color-text-secondary: rgba(251, 248, 248, 0.7); /* Oasis Off-White with opacity */
 
+    --color-secondary: rgba(212, 162, 74, 0.15); /* Lighter Gold with opacity for subtle backgrounds */
+    --color-secondary-hover: rgba(212, 162, 74, 0.2);
+    --color-secondary-active: rgba(212, 162, 74, 0.25);
+
+    --color-border: rgba(251, 248, 248, 0.25); /* Oasis Off-White with opacity for borders */
+    --color-card-border: rgba(251, 248, 248, 0.15); /* Lighter for card borders */
+    --color-card-border-inner: rgba(251, 248, 248, 0.1); /* Even lighter for inner card borders */
+    
+    --color-focus-ring: rgba(212, 162, 74, 0.4); /* Lighter Gold with opacity for focus */
+    
+    --color-btn-primary-text: #2A1030; /* Darker Oasis Purple/Blue text for contrast on Lighter Gold button */
+
+    /* RGB versions for Oasis Dark Mode */
+    --color-primary-rgb: 212, 162, 74; /* #D4A24A */
+    --color-text-rgb: 251, 248, 248; /* #FBF8F8 */
+    /* Status colors (success, error, etc.) will inherit from the initial dark mode :root definition */
+  }
+}
 
 /* Hero Section */
 .hero {
