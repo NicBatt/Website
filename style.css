@@ -160,7 +160,12 @@
     --color-text-rgb: 245, 245, 245;
   }
 }
-
+@media (prefers-color-scheme: light), (prefers-color-scheme: dark) {
+  :root {
+    /* Force the site to ignore system preference */
+    color-scheme: dark;
+  }
+}
 /* Data attribute for manual theme switching */
 /* Updated to reflect new Oasis PDF Brand Colors */
 [data-color-scheme="dark"] {
@@ -207,45 +212,6 @@
   --color-error-rgb: 255, 84, 89;
   --color-warning-rgb: 230, 129, 97;
   --color-info-rgb: 167, 169, 169;
-}
-
-[data-color-scheme="light"] {
-  --color-primary: #BB862C; /* Oasis Gold */
-  --color-primary-hover: #A97326; /* Darker Oasis Gold */
-  --color-primary-active: #976020; /* Even Darker Oasis Gold */
-  
-  --color-background: #FBF8F8; /* Oasis Off-White */
-  --color-surface: #FFFFFF; /* Pure White */
-  
-  --color-text: #3B1B42; /* Oasis Dark Purple/Blue */
-  --color-text-secondary: rgba(59, 27, 66, 0.7); /* Oasis Dark Purple/Blue with opacity */
-
-  --color-secondary: rgba(187, 134, 44, 0.1); /* Oasis Gold with opacity */
-  --color-secondary-hover: rgba(187, 134, 44, 0.15);
-  --color-secondary-active: rgba(187, 134, 44, 0.2);
-  
-  --color-border: rgba(59, 27, 66, 0.25); /* Oasis Dark Purple/Blue with opacity */
-  --color-card-border: rgba(59, 27, 66, 0.15);
-  --color-card-border-inner: rgba(59, 27, 66, 0.1); /* Slightly lighter for inner */
-
-  --color-focus-ring: rgba(187, 134, 44, 0.4); /* Oasis Gold with opacity */
-  --color-btn-primary-text: #FFFFFF; /* White text for contrast on Gold button */
-  --color-select-caret: rgba(59, 27, 66, 0.8); /* Oasis Dark Purple/Blue based */
-
-  /* Retain original status colors for light mode unless specified by brand */
-  --color-error: rgba(192, 21, 47, 1);
-  --color-success: rgba(33, 128, 141, 1); /* Original success, or could be var(--color-primary); */
-  --color-warning: rgba(168, 75, 47, 1);
-  --color-info: rgba(98, 108, 113, 1);
-
-  /* RGB versions for light mode - Oasis Brand */
-  --color-primary-rgb: 187, 134, 44; /* #BB862C */
-  --color-text-rgb: 59, 27, 66; /* #3B1B42 */
-  /* RGB for status colors - using original values */
-  --color-success-rgb: 33, 128, 141;
-  --color-error-rgb: 192, 21, 47;
-  --color-warning-rgb: 168, 75, 47;
-  --color-info-rgb: 98, 108, 113;
 }
 
 /* Base styles */
