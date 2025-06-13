@@ -436,10 +436,6 @@ select.form-control {
   background-image: var(--select-caret-dark);
 }
 
-[data-color-scheme="light"] select.form-control {
-  background-image: var(--select-caret-light);
-}
-
 .form-control:focus {
   border-color: var(--color-primary);
   outline: var(--focus-outline); /* Uses --color-primary from Oasis brand */
